@@ -8,11 +8,11 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
+export default function TabLayout() { // Expo Router 幫你「自動使用」這個 _layout.tsx, 代表這個檔案（_layout.tsx）預設 export 一個名字叫 TabLayout 的函式元件。
   const colorScheme = useColorScheme();
 
   return (
-    <Tabs
+    <Tabs                             // JSX 語法: <Tabs> ... </Tabs> 元件標籤
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
@@ -26,18 +26,11 @@ export default function TabLayout() {
           default: {},
         }),
       }}>
-      <Tabs.Screen
-        name="login"
-        options={{
-          title: 'Login',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="index"
-        options={{
+      <Tabs.Screen       // 元件呼叫語法，會轉成 React.createElement(...)
+        name="index"     // JSX 的屬性
+        options={{       // JavaScript 物件
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,   // = function IconFunction(props) {  const color = props.color; return <IconSymbol color={color} />;}
         }}
       />
       <Tabs.Screen
