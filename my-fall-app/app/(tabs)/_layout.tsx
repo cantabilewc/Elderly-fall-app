@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
@@ -47,6 +48,13 @@ export default function TabLayout() { // Expo Router 幫你「自動使用」這
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="exclamationmark.triangle.fill" color={color} />,
         }}
         />
+      <Tabs.Screen
+        name="bluetooth"
+        options={{
+          title: 'BLE',
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons size={28} name="bluetooth" color={color} />,
+        }}
+      />
     </Tabs>
   );
 }
