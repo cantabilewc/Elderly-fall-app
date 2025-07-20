@@ -42,7 +42,7 @@ export default function TabLayout() { // Expo Router 幫你「自動使用」這
         }}
       />
       <Tabs.Screen
-        name="ElderHomeScreen"
+        name="CarerHomeScreen"
         options={{
           title: 'Elder',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="exclamationmark.triangle.fill" color={color} />,
